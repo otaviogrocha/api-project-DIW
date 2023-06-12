@@ -1,3 +1,4 @@
+const card = document.querySelector('#produto');
 function init() {
 
     const urlParams = new URLSearchParams(window.location.search)
@@ -6,9 +7,6 @@ function init() {
     if (urlParams.get("category"))
         category = "/category/" + urlParams.get("category")
 
-    const card = document.querySelector('#produto');
-
-    console.log(category)
 
     fetch(`https://diwserver.vps.webdock.cloud/products${category}?page_items=20`).then(response =>
         response.json()).then(data => {
@@ -41,7 +39,6 @@ function search() {
     card.innerHTML = ""
 
     fetch(`https://diwserver.vps.webdock.cloud/products/search?page_items=20&query=${search}`).then(response => response.json()).then(data => {
-        console.log(data)
         if (data.length)
             data.forEach(produto => {
                 card.innerHTML += `
@@ -60,10 +57,6 @@ function search() {
 
     })
 }
-
-fetch('https://diwserver.vps.webdock.cloud/products/categories').then(response => response.json()).then(data =>{
-    console.log(data)
-})
 
 
 init()
