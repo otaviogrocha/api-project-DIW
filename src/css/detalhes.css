@@ -1,0 +1,100 @@
+
+*{
+  font-family: 'Montserrat', sans-serif;
+}
+.product-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.product-image {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+
+.product-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  margin-bottom: 20px;
+}
+
+.product-price {
+  font-size: 18px;
+  color: #c00;
+  margin-bottom: 10px;
+}
+
+.product-buy-button {
+  padding: 10px 20px;
+  background-color: #c00;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.product-buy-button:hover {
+  background-color: #900;
+}
+
+
+/*  NAVBAR */
+
+.logo-title {
+  padding-top: 7.8px;
+  padding-left: 5px;
+}
+
+button {
+  color: red;
+}
+
+
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.navbar-nav {
+  padding-right: 20px;
+}
+
+.navbar-collapse {
+  padding-left: 30px;
+}
+
+.navbar-brand {
+  padding-left: 10px;
+}
+
+.filtro {
+  border: 0.5px solid black;
+}
+
+.botao-pesquisa {
+  color: whitesmoke;
+  margin-left: 5px;
+  width: 60px;
+  height: 40px;
+}
+
+/*  FOOTER */
+
+footer {
+  margin-top: 30px;
+}

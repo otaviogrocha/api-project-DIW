@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>King Store</title>
+    <!-- Link para a biblioteca do Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    <link rel="shortcut icon" href="src/img/kong-page-icon.svg" type="image/x-icon">
+    <link rel="stylesheet" href="src/css/styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;500&display=swap');
+    </style>
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-md navbar-light bg-light">
+        <a class="navbar-brand d-flex" href="index.html">
+            <img src="src/img/logo.jpg" width="50" height="50" class="d-inline-block align-top" alt="Logo">
+            <span class="logo-title">King Store</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarNav">
+            <div class="form-inline my-2 my-lg-0">
+                <div class="input-group">
+                    <input id="search" class="form-control mr-sm-2" type="search" placeholder="Pesquisar"
+                        aria-label="Pesquisar">
+                    <div class="input-group-append">
+                        <button onclick="search()"
+                            class="botao-pesquisa btn btn-danger outline my-2 my-sm-0 fas fa-search"
+                            type="submit"></button>
+                    </div>
+                </div>
+            </div>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active">
+                    <a class="nav-link" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#produtos">Produtos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#categorias">Categorias</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#contato">Contato</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <!-- Carousel -->
+    <div class="carrossel row d-flex justify-content-center pt-4">
+        <!-- <div class="col-sm-5"> -->
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item p-5 active">
+                    <img class="d-block w-100 ajusteCarrosel" src="src/img/blackwidow-razer.jpg"
+                        alt="Primeiro Slide">
+                </div>
+                <div class="carousel-item p-5">
+                    <img class="d-block w-100 ajusteCarrosel" src="src/img/dell 15.jpg" alt="Segundo Slide">
+                </div>
+                <div class="carousel-item p-5">
+                    <img class="d-block w-100 ajusteCarrosel" src="src/img/g203 black.png"
+                        alt="Terceiro Slide">
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+                data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Próximo</span>
+            </button>
+        </div>
+    </div>
+
+    <!-- CAIXA DE PESQUISA/FILTRO -->
+    <div class="filtro container my-3 mt-3">
+        <div>
+            <div class="row">
+                <h3 class="mb-4">Filtros:</h3>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="inputPrecoMin">Preço mínimo:</label>
+                        <input type="range" class="form-range" id="inputPrecoMin" min="0" max="1000" step="10"
+                            value="0">
+                        <span id="spanPrecoMin"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="inputPrecoMax">Preço máximo:</label>
+                        <input type="range" class="form-range" id="inputPrecoMax" min="100" max="1000" step="10"
+                            value="1000">
+                        <span id="spanPrecoMax"></span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="form-group">
+                        <label for="tipoProduto">Tipo de Produto:</label>
+                        <select id="category" class="form-control" id="tipoProduto" name="tipoProduto">
+                            <option value="Accessories - Accessories">Accessories - Accessories</option>
+                            <option value="Accessories - Bags">Accessories - Bags</option>
+                            <option value="Accessories - Belts">Accessories - Belts</option>
+                            <option value="Accessories - Cufflinks">Accessories - Cufflinks</option>
+                            <option value="Accessories - Eyewear">Accessories - Eyewear</option>
+                            <option value="Accessories - Headwear">Accessories - Headwear</option>
+                            <option value="Accessories - Jewellery">Accessories - Jewellery</option>
+                            <option value="Accessories - Mufflers">Accessories - Mufflers</option>
+                            <option value="Accessories - Perfumes">Accessories - Perfumes</option>
+                            <option value="Accessories - Scarves">Accessories - Scarves</option>
+                            <option value="Accessories - Shoe Accessories">Accessories - Shoe Accessories</option>
+                            <option value="Accessories - Socks">Accessories - Socks</option>
+                            <option value="Accessories - Ties">Accessories - Ties</option>
+                            <option value="Accessories - Wallets">Accessories - Wallets</option>
+                            <option value="Accessories - Watches">Accessories - Watches</option>
+                            <option value="Apparel - Apparel Set">Apparel - Apparel Set</option>
+                            <option value="Apparel - Bottomwear">Apparel - Bottomwear</option>
+                            <option value="Apparel - Innerwear">Apparel - Innerwear</option>
+                            <option value="Apparel - Loungewear and Nightwear">Apparel - Loungewear and Nightwear</option>
+                            <option value="Apparel - Saree">Apparel - Saree</option>
+                            <option value="Apparel - Topwear">Apparel - Topwear</option>
+                            <option value="Footwear - Flip Flops">Footwear - Flip Flops</option>
+                            <option value="Footwear - Sandal">Footwear - Sandal</option>
+                            <option value="Footwear - Shoes">Footwear - Shoes</option>
+                            <option value="Free Items - Free Gifts">Free Items - Free Gifts</option>
+                            <option value="Personal Care - Bath and Body">Personal Care - Bath and Body</option>
+                            <option value="Personal Care - Beauty Accessories">Personal Care - Beauty Accessories</option>
+                            <option value="Personal Care - Eyes">Personal Care - Eyes</option>
+                            <option value="Personal Care - Fragrance">Personal Care - Fragrance</option>
+                            <option value="Personal Care - Hair">Personal Care - Hair</option>
+                            <option value="Personal Care - Lips">Personal Care - Lips</option>
+                            <option value="Personal Care - Makeup">Personal Care - Makeup</option>
+                            <option value="Personal Care - Nails">Personal Care - Nails</option>
+                            <option value="Personal Care - Perfumes">Personal Care - Perfumes</option>
+                            <option value="Personal Care - Skin">Personal Care - Skin</option>
+                            <option value="Personal Care - Skin Care">Personal Care - Skin Care</option>
+                        </select>
+                    </div>
+
+                </div>
+            </div>
+            <div class="text-center">
+                <button onclick="searchCategory()" class="btn btn-danger my-3">Buscar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Painel de Cards de Produtos -->
+    <div class="grid py-5 px-md-5">
+        <div class="row">
+            <div class="col-md-9">
+                <h2 class="text-center" style="height:200px;">Os Melhores Produtos para Você</h2>
+                <div id="produto" class="row row-cols-1 row-cols-md-3">
+                    <!-- Card 1 -->
+                </div>
+            </div>
+            <!-- Painel de Cards de Produtos em Destaque -->
+            <div class="col-md-3">
+                <h2 class="text-center mb-4" style="height: 200px;">Produtos mais vendidos</h2>
+                <div class="row flex-column align-items-center">
+                    <div class="col-12 mb-3">
+                        <div class="card">
+                            <img src="src/img/dell g15.png" class="destaque p-5 card-img-top-fluid" alt="Produto 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Notebook DELL G15</h5>
+                                <p class="card-text" style="margin-bottom: 8px;">A nova série de PCs Gaming Dell G15 foi
+                                    projetada para atender as necessidades dos gamers mais exigentes, com gráficos
+                                    poderosos, desempenho extremamente rápido e sistema térmico aprimorado. Tudo isso
+                                    para os seus jogos se tornarem mais intensos e reais.</p>
+                                <a href="#" class="btn btn-danger">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12  mb-3">
+                        <div class="card">
+                            <img src="src/img/g 203.png" class="destaque p-5 card-img-top-fluid" alt="Produto 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Mouse Logitech G203</h5>
+                                <p class="card-text" style="margin-bottom: 8px;">Jogue em cores com a nossa tecnologia
+                                    LIGHTSYNC RGB mais vibrante, com efeitos de ondas de cores personalizáveis. Um show
+                                    de luzes que reagem ao jogo, áudio ou à cor da sua tela a cada disputa.</p>
+                                <a href="#" class="btn btn-danger">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 mb-3">
+                        <div class="card">
+                            <img src="src/img/cloud stinger.png" class="destaque p-5 card-img-top-fluid" alt="Produto 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Fone de Ouvido Hyperx Cloud Stinger</h5>
+                                <p class="card-text" style="margin-bottom:8px;">O HyperX Cloud Stinger é o headset ideal
+                                    para jogadores que procuram leveza e conforto, qualidade de som superior e maior
+                                    praticidade.</p>
+                                <a href="#" class="btn btn-danger">Comprar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row flex-column align-items-center mt-5">
+                    <div class="newsletter-panel">
+                        <form>
+                            <label for="email">Assine nossa Newsletter:</label><br>
+                            <input type="email" class="w-100" id="email" name="email" placeholder="Seu e-mail">
+                            <button class="my-2 btn btn-danger" type="submit">Assinar</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="src/js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous">
+        </script>
+</body>
+<footer class="container-fluid bg-dark text-white pt-4 pb-2">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <h4>Formas de pagamento</h4>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><i class="fab fa-cc-visa fa-2x"></i></li>
+                    <li class="list-inline-item"><i class="fab fa-cc-mastercard fa-2x"></i></li>
+                    <li class="list-inline-item"><i class="fab fa-cc-paypal fa-2x"></i></li>
+                    <li class="list-inline-item"><i class="fab fa-cc-amex fa-2x"></i></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h4>Redes Sociais</h4>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="#facebook"><i
+                                class="fab fa-facebook-square fa-2x text-white"></i></a></li>
+                    <li class="list-inline-item"><a href="#twitter"><i
+                                class="fab fa-twitter-square fa-2x text-white"></i></a></li>
+                    <li class="list-inline-item"><a href="#instagram"><i
+                                class="fab fa-instagram-square fa-2x text-white"></i></a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h4>Link Úteis</h4>
+                <ul class="list-inline">
+                    <li> <a href="#faq">FAQ</a></li>
+                    <li> <a href="#aboutus">Sobre nós</a></li>
+                    <li> <a href="#policies">Políticas da Empresa</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3">
+                <h4>Contato</h4>
+                <ul class="list-unstyled">
+                    <li><i class="fas fa-phone"></i> (31) 3536-1010</li>
+                    <li><i class="fas fa-envelope"></i> contato@kingstore.com.br</li>
+                    <li><i class="fas fa-map-marker-alt"></i> Av. Carlos Machado, 1234 - Belo Horizonte/MG</li>
+                </ul>
+            </div>
+        </div>
+        <span class="id">©2023 Otávio Rocha - Sistemas de Informação - 798570 </span>
+    </div>
+</footer>
+
+</html>
